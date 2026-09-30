@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "sources": [
+    "src/app/store/auth.actions.ts"
+  ],
+  "sourcesContent": [
+    "import { createAction, props } from '@ngrx/store';\nimport { Customer } from '../core/models/commerce.models';\n\nexport const login = createAction(\n  '[Account] Login',\n  props<{ username: string; password: string }>()\n);\nexport const loginSuccess = createAction('[Account] Login Success', props<{ customer: Customer }>());\nexport const loginFailure = createAction('[Account] Login Failure', props<{ error: string }>());\nexport const logout = createAction('[Account] Logout');\nexport const restoreSession = createAction('[Account] Restore Session');\nexport const restoreSessionSuccess = createAction(\n  '[Account] Restore Session Success',\n  props<{ customer: Customer | null }>()\n);"
+  ],
+  "mappings": ";;;;;;AAGO,IAAM,QAAQ;AAAA,EACnB;AAAA,EACA,MAA8C;AAChD;AACO,IAAM,eAAe,aAAa,2BAA2B,MAA8B,CAAC;AAC5F,IAAM,eAAe,aAAa,2BAA2B,MAAyB,CAAC;AACvF,IAAM,SAAS,aAAa,kBAAkB;AAC9C,IAAM,iBAAiB,aAAa,2BAA2B;AAC/D,IAAM,wBAAwB;AAAA,EACnC;AAAA,EACA,MAAqC;AACvC;",
+  "names": [],
+  "debugId": "81d472cd-64cd-5875-8265-1db9ecb9b9ef"
+}

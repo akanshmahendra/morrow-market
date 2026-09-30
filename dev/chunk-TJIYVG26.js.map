@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "sources": [
+    "src/app/store/shop.actions.ts"
+  ],
+  "sourcesContent": [
+    "import { createAction, props } from '@ngrx/store';\nimport {\n  CartItem,\n  Category,\n  Order,\n  PersistedShopData,\n  Product,\n  ProductSort,\n} from '../core/models/commerce.models';\n\nexport const loadCatalog = createAction('[Catalog] Load');\nexport const loadCatalogSuccess = createAction(\n  '[Catalog] Load Success',\n  props<{ products: Product[]; categories: Category[] }>()\n);\nexport const loadCatalogFailure = createAction(\n  '[Catalog] Load Failure',\n  props<{ error: string }>()\n);\nexport const setCategory = createAction('[Catalog] Set Category', props<{ category: string }>());\nexport const setSearch = createAction('[Catalog] Set Search', props<{ query: string }>());\nexport const setSort = createAction('[Catalog] Set Sort', props<{ sort: ProductSort }>());\nexport const showMoreProducts = createAction('[Catalog] Show More');\nexport const toggleWishlist = createAction(\n  '[Wishlist] Toggle Product',\n  props<{ productId: number }>()\n);\n\nexport const addToCart = createAction(\n  '[Cart] Add Item',\n  props<{ product: Product; quantity?: number }>()\n);\nexport const removeFromCart = createAction(\n  '[Cart] Remove Item',\n  props<{ productId: number }>()\n);\nexport const setCartQuantity = createAction(\n  '[Cart] Set Quantity',\n  props<{ productId: number; quantity: number }>()\n);\nexport const clearCart = createAction('[Cart] Clear');\nexport const placeOrder = createAction('[Checkout] Place Order', props<{ order: Order }>());\nexport const loadPersistedData = createAction('[Shop] Load Persisted Data');\nexport const loadPersistedDataSuccess = createAction(\n  '[Shop] Load Persisted Data Success',\n  props<PersistedShopData>()\n);"
+  ],
+  "mappings": ";;;;;;AAUO,IAAM,cAAc,aAAa,gBAAgB;AACjD,IAAM,qBAAqB;AAAA,EAChC;AAAA,EACA,MAAuD;AACzD;AACO,IAAM,qBAAqB;AAAA,EAChC;AAAA,EACA,MAAyB;AAC3B;AACO,IAAM,cAAc,aAAa,0BAA0B,MAA4B,CAAC;AACxF,IAAM,YAAY,aAAa,wBAAwB,MAAyB,CAAC;AACjF,IAAM,UAAU,aAAa,sBAAsB,MAA6B,CAAC;AACjF,IAAM,mBAAmB,aAAa,qBAAqB;AAC3D,IAAM,iBAAiB;AAAA,EAC5B;AAAA,EACA,MAA6B;AAC/B;AAEO,IAAM,YAAY;AAAA,EACvB;AAAA,EACA,MAA+C;AACjD;AACO,IAAM,iBAAiB;AAAA,EAC5B;AAAA,EACA,MAA6B;AAC/B;AACO,IAAM,kBAAkB;AAAA,EAC7B;AAAA,EACA,MAA+C;AACjD;AACO,IAAM,YAAY,aAAa,cAAc;AAC7C,IAAM,aAAa,aAAa,0BAA0B,MAAwB,CAAC;AACnF,IAAM,oBAAoB,aAAa,4BAA4B;AACnE,IAAM,2BAA2B;AAAA,EACtC;AAAA,EACA,MAAyB;AAC3B;",
+  "names": [],
+  "debugId": "e044c45a-7c86-5178-9c64-0c04ad390d3e"
+}
