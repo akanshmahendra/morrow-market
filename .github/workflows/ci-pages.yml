@@ -1,0 +1,126 @@
+name: CI and GitHub Pages
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: morrow-market-pages
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: Test and build
+    runs-on: ubuntu-latest
+    outputs:
+      environment: ${{ steps.target.outputs.environment }}
+      configuration: ${{ steps.target.outputs.configuration }}
+      base_href: ${{ steps.target.outputs.base_href }}
+      destination_dir: ${{ steps.target.outputs.destination_dir }}
+      site_url: ${{ steps.target.outputs.site_url }}
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run unit tests
+        run: npm test -- --watch=false
+
+      - name: Select deployment target
+        id: target
+        shell: bash
+        run: |
+          owner="${GITHUB_REPOSITORY_OWNER,,}"
+          repository="${GITHUB_REPOSITORY#*/}"
+          target_ref="$GITHUB_REF_NAME"
+          if [[ "$GITHUB_EVENT_NAME" == "pull_request" ]]; then
+            target_ref="$GITHUB_BASE_REF"
+          fi
+
+          if [[ "$target_ref" == "main" ]]; then
+            echo "environment=prod" >> "$GITHUB_OUTPUT"
+            echo "configuration=production" >> "$GITHUB_OUTPUT"
+            destination_dir="."
+            if [[ "$repository" == "$owner.github.io" ]]; then
+              base_href="/"
+              site_url="https://${owner}.github.io/"
+            else
+              base_href="/${repository}/"
+              site_url="https://${owner}.github.io/${repository}/"
+            fi
+          elif [[ "$target_ref" == "develop" ]]; then
+            echo "environment=dev" >> "$GITHUB_OUTPUT"
+            echo "configuration=development" >> "$GITHUB_OUTPUT"
+            destination_dir="dev"
+            if [[ "$repository" == "$owner.github.io" ]]; then
+              base_href="/dev/"
+              site_url="https://${owner}.github.io/dev/"
+            else
+              base_href="/${repository}/dev/"
+              site_url="https://${owner}.github.io/${repository}/dev/"
+            fi
+          else
+            echo "Builds must target main or develop." >&2
+            exit 1
+          fi
+
+          echo "base_href=${base_href}" >> "$GITHUB_OUTPUT"
+          echo "destination_dir=${destination_dir}" >> "$GITHUB_OUTPUT"
+          echo "site_url=${site_url}" >> "$GITHUB_OUTPUT"
+
+      - name: Build for GitHub Pages
+        run: >-
+          npm run build --
+          --configuration "${{ steps.target.outputs.configuration }}"
+          --base-href "${{ steps.target.outputs.base_href }}"
+
+      - name: Add SPA route fallback
+        run: cp dist/morrow-market/browser/index.html dist/morrow-market/browser/404.html
+
+      - name: Upload Pages bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages-site
+          path: dist/morrow-market/browser
+          if-no-files-found: error
+          retention-days: 1
+
+  deploy:
+    name: Deploy to ${{ needs.validate.outputs.environment }}
+    if: github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    environment:
+      name: ${{ needs.validate.outputs.environment }}
+      url: ${{ needs.validate.outputs.site_url }}
+    permissions:
+      contents: write
+    steps:
+      - name: Download Pages bundle
+        uses: actions/download-artifact@v4
+        with:
+          name: pages-site
+          path: site
+
+      - name: Publish site to GitHub Pages branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./site
+          destination_dir: ${{ needs.validate.outputs.destination_dir }}
+          keep_files: true

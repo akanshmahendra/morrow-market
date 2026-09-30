@@ -1,0 +1,75 @@
+<div class="announcement">
+  <span>Good things, thoughtfully found.</span>
+  <span class="announcement-detail">Complimentary delivery on orders over $75</span>
+</div>
+
+<header class="site-header">
+  <div class="header-main page-wrap">
+    <a class="wordmark" routerLink="/" aria-label="Morrow Market home">morrow<span>.</span></a>
+
+    <label class="search-box">
+      <ng-icon name="lucideSearch" aria-hidden="true" />
+      <input
+        type="search"
+        placeholder="Search the good stuff"
+        aria-label="Search products"
+        (input)="search($event)"
+      />
+      <kbd>⌘ K</kbd>
+    </label>
+
+    <nav class="header-actions" aria-label="Shopping links">
+      <a class="icon-link saved-link" routerLink="/wishlist" aria-label="Your saved items">
+        <ng-icon name="lucideHeart" aria-hidden="true" />
+        <span class="action-label">Saved</span>
+      </a>
+      <a class="icon-link account-link" routerLink="/account" aria-label="Your account">
+        <ng-icon name="lucideCircleUserRound" aria-hidden="true" />
+        <span class="action-label">@if (customer$ | async; as customer) { {{ customer.firstName }} } @else { Account }</span>
+      </a>
+      <a class="icon-link cart-link" routerLink="/cart" aria-label="Shopping bag">
+        <ng-icon name="lucideShoppingBag" aria-hidden="true" />
+        <span class="action-label">Bag</span>
+        @if (cartCount$ | async; as count) {
+          @if (count > 0) { <span class="cart-count">{{ count }}</span> }
+        }
+      </a>
+      <button class="mobile-menu" type="button" [attr.aria-expanded]="menuOpen()" [attr.aria-label]="menuOpen() ? 'Close navigation' : 'Open navigation'" title="Browse categories" (click)="toggleMenu()">
+        <ng-icon name="lucideMenu" aria-hidden="true" />
+      </button>
+    </nav>
+  </div>
+
+  <nav class="category-nav page-wrap" [class.menu-open]="menuOpen()" aria-label="Product categories">
+    <a routerLink="/" fragment="discover">Shop all</a>
+    <a routerLink="/" fragment="discover" [queryParams]="{ category: 'beauty' }">Beauty</a>
+    <a routerLink="/" fragment="discover" [queryParams]="{ category: 'fragrances' }">Fragrance</a>
+    <a routerLink="/" fragment="discover" [queryParams]="{ category: 'furniture' }">Home</a>
+    <a routerLink="/" fragment="discover" [queryParams]="{ category: 'groceries' }">Pantry</a>
+    <a routerLink="/" fragment="discover" class="nav-new">New finds <span>↗</span></a>
+    <span class="nav-note">A little more considered.</span>
+  </nav>
+</header>
+
+<main>
+  <router-outlet />
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main page-wrap">
+    <div class="footer-brand">
+      <a class="wordmark wordmark-light" routerLink="/">morrow<span>.</span></a>
+      <p>Everyday things, chosen with a little more care.</p>
+    </div>
+    <div class="footer-links">
+      <a routerLink="/" fragment="discover">Shop the collection</a>
+      <a routerLink="/wishlist">Your saved finds</a>
+      <a routerLink="/cart">Your shopping bag</a>
+    </div>
+    <p class="footer-note">Made for the moments in between.</p>
+  </div>
+  <div class="footer-bottom page-wrap">
+    <span>© 2026 Morrow Market</span>
+    <span>Thoughtfully sourced. Happily delivered.</span>
+  </div>
+</footer>

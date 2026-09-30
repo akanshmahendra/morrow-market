@@ -1,0 +1,43 @@
+<article class="product-card">
+  <div class="product-visual">
+    <a class="product-image" [routerLink]="['/product', product().id]" [attr.aria-label]="'View ' + product().title">
+      <img
+        [ngSrc]="product().thumbnail"
+        [alt]="product().title"
+        width="520"
+        height="520"
+        [priority]="priority()"
+      />
+    </a>
+    @if (product().discountPercentage > 10) {
+      <span class="product-tag">A little less</span>
+    }
+    <button
+      class="save-button"
+      type="button"
+      [class.is-saved]="favorite()"
+      [attr.aria-pressed]="favorite()"
+      [attr.aria-label]="favorite() ? 'Remove from saved items' : 'Save item'"
+      (click)="toggleSaved()"
+    >
+      <ng-icon name="lucideHeart" aria-hidden="true" />
+    </button>
+    <button class="quick-add" type="button" [disabled]="product().stock < 1" (click)="addToBag()">
+      <span>{{ product().stock > 0 ? 'Add to bag' : 'Sold out' }}</span>
+      @if (product().stock > 0) { <ng-icon name="lucidePlus" aria-hidden="true" /> }
+    </button>
+  </div>
+  <div class="product-copy">
+    <div class="product-meta">
+      <span>{{ product().brand || product().category }}</span>
+      <span class="rating">★ {{ product().rating | number:'1.1-1' }}</span>
+    </div>
+    <a class="product-title" [routerLink]="['/product', product().id]">{{ product().title }}</a>
+    <div class="product-price">
+      <span>{{ salePrice() | currency }}</span>
+      @if (product().discountPercentage > 0) {
+        <del>{{ product().price | currency }}</del>
+      }
+    </div>
+  </div>
+</article>

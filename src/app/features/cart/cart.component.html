@@ -1,0 +1,62 @@
+<section class="cart-page page-wrap">
+  <div class="page-heading">
+    <div><span class="eyebrow">Your picks</span><h1 class="display-title">The shopping bag.</h1></div>
+    @if (items().length > 0) { <span class="item-count">{{ items().length }} {{ items().length === 1 ? 'item' : 'items' }}</span> }
+  </div>
+
+  @if (items().length === 0) {
+    <div class="cart-empty">
+      <div class="empty-mark"><ng-icon name="lucideShoppingBag" aria-hidden="true" /></div>
+      <span class="eyebrow">Room for something good</span>
+      <h2>Your bag is taking a little break.</h2>
+      <p>Find a thoughtful little upgrade and it will be waiting here.</p>
+      <a class="primary-button" routerLink="/">Explore the collection <ng-icon name="lucideArrowRight" aria-hidden="true" /></a>
+    </div>
+  } @else {
+    <div class="cart-layout">
+      <div class="cart-lines">
+        @for (item of items(); track item.product.id) {
+          <article class="cart-line">
+            <a class="line-image" [routerLink]="['/product', item.product.id]">
+              <img [ngSrc]="item.product.thumbnail" [alt]="item.product.title" width="220" height="220" />
+            </a>
+            <div class="line-info">
+              <span class="line-brand">{{ item.product.brand || item.product.category }}</span>
+              <a class="line-title" [routerLink]="['/product', item.product.id]">{{ item.product.title }}</a>
+              <span class="line-stock">{{ item.product.availabilityStatus }}</span>
+              <div class="line-controls">
+                <div class="quantity-control" [attr.aria-label]="'Quantity for ' + item.product.title">
+                  <button type="button" [attr.aria-label]="'Remove one ' + item.product.title" [disabled]="item.quantity <= 1" (click)="setQuantity(item, item.quantity - 1)"><ng-icon name="lucideMinus" aria-hidden="true" /></button>
+                  <span aria-live="polite">{{ item.quantity }}</span>
+                  <button type="button" [attr.aria-label]="'Add one ' + item.product.title" [disabled]="item.quantity >= item.product.stock" (click)="setQuantity(item, item.quantity + 1)"><ng-icon name="lucidePlus" aria-hidden="true" /></button>
+                </div>
+                <button class="remove-button" type="button" (click)="remove(item)"><ng-icon name="lucideTrash2" aria-hidden="true" /> Remove</button>
+              </div>
+            </div>
+            <div class="line-price">
+              <strong>{{ discountedPrice(item) * item.quantity | currency }}</strong>
+              @if (item.product.discountPercentage > 0) { <del>{{ item.product.price * item.quantity | currency }}</del> }
+            </div>
+          </article>
+        }
+        <a class="continue-link" routerLink="/"><ng-icon name="lucideArrowRight" aria-hidden="true" /> Keep looking around</a>
+      </div>
+
+      <aside class="order-summary" aria-labelledby="summary-title">
+        <h2 id="summary-title">A quick total</h2>
+        @if (shippingGap() > 0) {
+          <div class="shipping-note">You’re {{ shippingGap() | currency }} away from complimentary delivery.</div>
+        } @else {
+          <div class="shipping-note shipping-earned"><ng-icon name="lucideCheck" aria-hidden="true" /> Complimentary delivery is yours.</div>
+        }
+        <div class="summary-row"><span>Subtotal</span><span>{{ subtotal() | currency }}</span></div>
+        <div class="summary-row"><span>Delivery</span><span>{{ delivery() === 0 ? 'Complimentary' : (delivery() | currency) }}</span></div>
+        <div class="summary-row"><span>Estimated tax</span><span>{{ tax() | currency }}</span></div>
+        <div class="summary-total"><span>Total</span><strong>{{ total() | currency }}</strong></div>
+        <p class="tax-note">Taxes are estimated and confirmed at checkout.</p>
+        <a class="primary-button checkout-button" routerLink="/checkout">Continue to checkout <ng-icon name="lucideArrowRight" aria-hidden="true" /></a>
+        <div class="secure-note"><ng-icon name="lucideShieldCheck" aria-hidden="true" /> Secure demo checkout</div>
+      </aside>
+    </div>
+  }
+</section>
