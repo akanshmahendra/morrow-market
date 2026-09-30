@@ -1,8 +1,8 @@
 import { Component, DestroyRef, OnInit, computed, inject } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
-import { Store } from '@ngrx/store';
 import { NG_ICON_DIRECTIVES } from '@ng-icons/core';
+import { Store } from '@ngrx/store';
 import { Product, ProductSort } from '../../core/models/commerce.models';
 import { ProductCardComponent } from '../../shared/product-card.component';
 import * as ShopActions from '../../store/shop.actions';
@@ -48,7 +48,9 @@ export class StorefrontComponent implements OnInit {
   }
 
   setSort(event: Event): void {
-    this.store.dispatch(ShopActions.setSort({ sort: (event.target as HTMLSelectElement).value as ProductSort }));
+    this.store.dispatch(
+      ShopActions.setSort({ sort: (event.target as HTMLSelectElement).value as ProductSort }),
+    );
   }
 
   addToCart(product: Product): void {

@@ -1,8 +1,8 @@
 import { CurrencyPipe, NgOptimizedImage } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Store } from '@ngrx/store';
 import { NG_ICON_DIRECTIVES } from '@ng-icons/core';
+import { Store } from '@ngrx/store';
 import { CartItem } from '../../core/models/commerce.models';
 import { discountedUnitPrice } from '../../core/models/pricing';
 import { removeFromCart, setCartQuantity } from '../../store/shop.actions';

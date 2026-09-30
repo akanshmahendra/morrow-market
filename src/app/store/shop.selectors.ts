@@ -1,5 +1,4 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { Customer } from '../core/models/commerce.models';
 import { discountedUnitPrice } from '../core/models/pricing';
 import { AuthState } from './auth.reducer';
 import { ShopState } from './shop.reducer';
@@ -23,7 +22,7 @@ export const selectPersistedData = createSelector(
   selectCartItems,
   selectWishlistIds,
   selectOrders,
-  (cartItems, wishlistIds, orders) => ({ cartItems, wishlistIds, orders })
+  (cartItems, wishlistIds, orders) => ({ cartItems, wishlistIds, orders }),
 );
 
 export const selectFilteredProducts = createSelector(
@@ -50,47 +49,45 @@ export const selectFilteredProducts = createSelector(
     }
     if (sort === 'rating') return [...filtered].sort((a, b) => b.rating - a.rating);
     return filtered;
-  }
+  },
 );
 
 export const selectVisibleProducts = createSelector(
   selectFilteredProducts,
   selectShopState,
-  (products, state) => products.slice(0, state.visibleCount)
+  (products, state) => products.slice(0, state.visibleCount),
 );
 export const selectCanShowMore = createSelector(
   selectFilteredProducts,
   selectShopState,
-  (products, state) => products.length > state.visibleCount
+  (products, state) => products.length > state.visibleCount,
 );
 export const selectWishlistProducts = createSelector(
   selectProducts,
   selectWishlistIds,
-  (products, wishlistIds) => products.filter((product) => wishlistIds.includes(product.id))
+  (products, wishlistIds) => products.filter((product) => wishlistIds.includes(product.id)),
 );
 export const selectCartCount = createSelector(selectCartItems, (items) =>
-  items.reduce((total, item) => total + item.quantity, 0)
+  items.reduce((total, item) => total + item.quantity, 0),
 );
 export const selectCartSubtotal = createSelector(
   selectCartItems,
   (items) =>
     Math.round(
-      items.reduce(
-        (total, item) => total + discountedUnitPrice(item.product) * item.quantity,
-        0
-      ) * 100
-    ) / 100
+      items.reduce((total, item) => total + discountedUnitPrice(item.product) * item.quantity, 0) *
+        100,
+    ) / 100,
 );
 export const selectCartDelivery = createSelector(selectCartSubtotal, (subtotal) =>
-  subtotal === 0 || subtotal >= 75 ? 0 : 6
+  subtotal === 0 || subtotal >= 75 ? 0 : 6,
 );
 export const selectCartTax = createSelector(
   selectCartSubtotal,
-  (subtotal) => Math.round(subtotal * 0.08 * 100) / 100
+  (subtotal) => Math.round(subtotal * 0.08 * 100) / 100,
 );
 export const selectCartTotal = createSelector(
   selectCartSubtotal,
   selectCartDelivery,
   selectCartTax,
-  (subtotal, delivery, tax) => subtotal + delivery + tax
+  (subtotal, delivery, tax) => subtotal + delivery + tax,
 );

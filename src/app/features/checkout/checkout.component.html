@@ -1,47 +1,146 @@
 <section class="checkout-page page-wrap">
   <div class="checkout-heading">
-    <div><span class="eyebrow">Almost yours</span><h1 class="display-title">A few delivery details.</h1></div>
+    <div>
+      <span class="eyebrow">Almost yours</span>
+      <h1 class="display-title">A few delivery details.</h1>
+    </div>
     <a class="back-link" routerLink="/cart">Back to bag</a>
   </div>
 
   @if (items().length === 0) {
-    <div class="checkout-empty"><p>Your bag is empty, so there’s nothing to check out just yet.</p><a class="primary-button" routerLink="/">Find something good</a></div>
+    <div class="checkout-empty">
+      <p>Your bag is empty, so there’s nothing to check out just yet.</p>
+      <a class="primary-button" routerLink="/">Find something good</a>
+    </div>
   } @else {
     <div class="checkout-layout">
       <form class="delivery-form" [formGroup]="form" (ngSubmit)="submitOrder()" novalidate>
         <section class="form-section">
-          <div class="section-title"><span>01</span><div><h2>Where should it go?</h2><p>We’ll use these details for delivery updates.</p></div></div>
+          <div class="section-title">
+            <span>01</span>
+            <div>
+              <h2>Where should it go?</h2>
+              <p>We’ll use these details for delivery updates.</p>
+            </div>
+          </div>
           <div class="form-grid">
-            <label class="field full-field">Full name<input type="text" formControlName="fullName" autocomplete="name" placeholder="Jamie Taylor" />@if (form.controls.fullName.touched && form.controls.fullName.invalid) { <small>Please enter your name.</small> }</label>
-            <label class="field full-field">Email address<input type="email" formControlName="email" autocomplete="email" placeholder="jamie@example.com" />@if (form.controls.email.touched && form.controls.email.invalid) { <small>Enter a valid email address.</small> }</label>
-            <label class="field full-field">Street address<input type="text" formControlName="address" autocomplete="street-address" placeholder="14 Orchard Lane" />@if (form.controls.address.touched && form.controls.address.invalid) { <small>Please enter your street address.</small> }</label>
-            <label class="field">City<input type="text" formControlName="city" autocomplete="address-level2" placeholder="Brooklyn" />@if (form.controls.city.touched && form.controls.city.invalid) { <small>Required.</small> }</label>
-            <label class="field">ZIP / postal code<input type="text" formControlName="postalCode" autocomplete="postal-code" placeholder="11211" />@if (form.controls.postalCode.touched && form.controls.postalCode.invalid) { <small>Required.</small> }</label>
-            <label class="field full-field">Country<select formControlName="country" autocomplete="country-name"><option>United States</option><option>Canada</option><option>United Kingdom</option><option>Australia</option></select></label>
+            <label class="field full-field"
+              >Full name<input
+                type="text"
+                formControlName="fullName"
+                autocomplete="name"
+                placeholder="Jamie Taylor"
+              />
+              @if (form.controls.fullName.touched && form.controls.fullName.invalid) {
+                <small>Please enter your name.</small>
+              }
+            </label>
+            <label class="field full-field"
+              >Email address<input
+                type="email"
+                formControlName="email"
+                autocomplete="email"
+                placeholder="jamie@example.com"
+              />
+              @if (form.controls.email.touched && form.controls.email.invalid) {
+                <small>Enter a valid email address.</small>
+              }
+            </label>
+            <label class="field full-field"
+              >Street address<input
+                type="text"
+                formControlName="address"
+                autocomplete="street-address"
+                placeholder="14 Orchard Lane"
+              />
+              @if (form.controls.address.touched && form.controls.address.invalid) {
+                <small>Please enter your street address.</small>
+              }
+            </label>
+            <label class="field"
+              >City<input
+                type="text"
+                formControlName="city"
+                autocomplete="address-level2"
+                placeholder="Brooklyn"
+              />
+              @if (form.controls.city.touched && form.controls.city.invalid) {
+                <small>Required.</small>
+              }
+            </label>
+            <label class="field"
+              >ZIP / postal code<input
+                type="text"
+                formControlName="postalCode"
+                autocomplete="postal-code"
+                placeholder="11211"
+              />
+              @if (form.controls.postalCode.touched && form.controls.postalCode.invalid) {
+                <small>Required.</small>
+              }
+            </label>
+            <label class="field full-field"
+              >Country<select formControlName="country" autocomplete="country-name">
+                <option>United States</option>
+                <option>Canada</option>
+                <option>United Kingdom</option>
+                <option>Australia</option>
+              </select></label
+            >
           </div>
         </section>
 
         <section class="form-section payment-section">
-          <div class="section-title"><span>02</span><div><h2>Payment</h2><p>Payments are not processed in this demo.</p></div></div>
-          <div class="demo-payment"><span class="payment-card">•••• &nbsp; •••• &nbsp; •••• &nbsp; 4242</span><span class="demo-badge">DEMO ONLY</span></div>
-          <p class="payment-note">A test confirmation only. No card details or real payment are collected.</p>
+          <div class="section-title">
+            <span>02</span>
+            <div>
+              <h2>Payment</h2>
+              <p>Payments are not processed in this demo.</p>
+            </div>
+          </div>
+          <div class="demo-payment">
+            <span class="payment-card">•••• &nbsp; •••• &nbsp; •••• &nbsp; 4242</span
+            ><span class="demo-badge">DEMO ONLY</span>
+          </div>
+          <p class="payment-note">
+            A test confirmation only. No card details or real payment are collected.
+          </p>
         </section>
 
-        <button class="primary-button place-order" type="submit">Place demo order <ng-icon name="lucideArrowRight" aria-hidden="true" /></button>
+        <button class="primary-button place-order" type="submit">
+          Place demo order <ng-icon name="lucideArrowRight" aria-hidden="true" />
+        </button>
       </form>
 
       <aside class="checkout-summary">
         <h2>Your order</h2>
         <div class="checkout-items">
           @for (item of items(); track item.product.id) {
-            <div class="checkout-item"><span class="checkout-quantity">{{ item.quantity }}</span><span class="checkout-name">{{ item.product.title }}</span><strong>{{ discountedPrice(item) | currency }}</strong></div>
+            <div class="checkout-item">
+              <span class="checkout-quantity">{{ item.quantity }}</span
+              ><span class="checkout-name">{{ item.product.title }}</span
+              ><strong>{{ discountedPrice(item) | currency }}</strong>
+            </div>
           }
         </div>
-        <div class="summary-line"><span>Subtotal</span><span>{{ subtotal() | currency }}</span></div>
-        <div class="summary-line"><span>Delivery</span><span>{{ delivery() === 0 ? 'Complimentary' : (delivery() | currency) }}</span></div>
-        <div class="summary-line"><span>Estimated tax</span><span>{{ tax() | currency }}</span></div>
-        <div class="summary-total"><span>Total</span><strong>{{ total() | currency }}</strong></div>
-        <div class="checkout-reassurance"><ng-icon name="lucideShieldCheck" aria-hidden="true" /><span>Your details stay in this browser demo.</span></div>
+        <div class="summary-line">
+          <span>Subtotal</span><span>{{ subtotal() | currency }}</span>
+        </div>
+        <div class="summary-line">
+          <span>Delivery</span
+          ><span>{{ delivery() === 0 ? 'Complimentary' : (delivery() | currency) }}</span>
+        </div>
+        <div class="summary-line">
+          <span>Estimated tax</span><span>{{ tax() | currency }}</span>
+        </div>
+        <div class="summary-total">
+          <span>Total</span><strong>{{ total() | currency }}</strong>
+        </div>
+        <div class="checkout-reassurance">
+          <ng-icon name="lucideShieldCheck" aria-hidden="true" /><span
+            >Your details stay in this browser demo.</span
+          >
+        </div>
       </aside>
     </div>
   }

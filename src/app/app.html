@@ -25,22 +25,41 @@
       </a>
       <a class="icon-link account-link" routerLink="/account" aria-label="Your account">
         <ng-icon name="lucideCircleUserRound" aria-hidden="true" />
-        <span class="action-label">@if (customer$ | async; as customer) { {{ customer.firstName }} } @else { Account }</span>
+        <span class="action-label">
+          @if (customer$ | async; as customer) {
+            {{ customer.firstName }}
+          } @else {
+            Account
+          }
+        </span>
       </a>
       <a class="icon-link cart-link" routerLink="/cart" aria-label="Shopping bag">
         <ng-icon name="lucideShoppingBag" aria-hidden="true" />
         <span class="action-label">Bag</span>
         @if (cartCount$ | async; as count) {
-          @if (count > 0) { <span class="cart-count">{{ count }}</span> }
+          @if (count > 0) {
+            <span class="cart-count">{{ count }}</span>
+          }
         }
       </a>
-      <button class="mobile-menu" type="button" [attr.aria-expanded]="menuOpen()" [attr.aria-label]="menuOpen() ? 'Close navigation' : 'Open navigation'" title="Browse categories" (click)="toggleMenu()">
+      <button
+        class="mobile-menu"
+        type="button"
+        [attr.aria-expanded]="menuOpen()"
+        [attr.aria-label]="menuOpen() ? 'Close navigation' : 'Open navigation'"
+        title="Browse categories"
+        (click)="toggleMenu()"
+      >
         <ng-icon name="lucideMenu" aria-hidden="true" />
       </button>
     </nav>
   </div>
 
-  <nav class="category-nav page-wrap" [class.menu-open]="menuOpen()" aria-label="Product categories">
+  <nav
+    class="category-nav page-wrap"
+    [class.menu-open]="menuOpen()"
+    aria-label="Product categories"
+  >
     <a routerLink="/" fragment="discover">Shop all</a>
     <a routerLink="/" fragment="discover" [queryParams]="{ category: 'beauty' }">Beauty</a>
     <a routerLink="/" fragment="discover" [queryParams]="{ category: 'fragrances' }">Fragrance</a>

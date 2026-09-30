@@ -10,15 +10,23 @@
     <span class="eyebrow">The Morrow edit · No. 04</span>
     <h1>Find the good<br />in the everyday.</h1>
     <p>Useful, beautiful things for home, self, and all the little moments between.</p>
-    <a class="hero-link" href="#discover">Explore the collection <ng-icon name="lucideArrowRight" aria-hidden="true" /></a>
+    <a class="hero-link" href="#discover"
+      >Explore the collection <ng-icon name="lucideArrowRight" aria-hidden="true"
+    /></a>
   </div>
   <div class="hero-index"><span>01</span> / 04</div>
 </section>
 
 <section class="benefits page-wrap" aria-label="Shopping benefits">
-  <div class="benefit"><ng-icon name="lucideSparkles" aria-hidden="true" /><span>Considered finds, never filler</span></div>
-  <div class="benefit"><ng-icon name="lucideTruck" aria-hidden="true" /><span>Free delivery over $75</span></div>
-  <div class="benefit"><ng-icon name="lucideShieldCheck" aria-hidden="true" /><span>Easy 30-day returns</span></div>
+  <div class="benefit">
+    <ng-icon name="lucideSparkles" aria-hidden="true" /><span>Considered finds, never filler</span>
+  </div>
+  <div class="benefit">
+    <ng-icon name="lucideTruck" aria-hidden="true" /><span>Free delivery over $75</span>
+  </div>
+  <div class="benefit">
+    <ng-icon name="lucideShieldCheck" aria-hidden="true" /><span>Easy 30-day returns</span>
+  </div>
 </section>
 
 <section class="collection page-wrap" id="discover">
@@ -31,9 +39,21 @@
   </div>
 
   <div class="category-strip" aria-label="Filter by category">
-    <button type="button" [class.active]="selectedCategory() === 'all'" (click)="setCategory('all')">Everything <span>↗</span></button>
+    <button
+      type="button"
+      [class.active]="selectedCategory() === 'all'"
+      (click)="setCategory('all')"
+    >
+      Everything <span>↗</span>
+    </button>
     @for (category of categories(); track category.slug) {
-      <button type="button" [class.active]="selectedCategory() === category.slug" (click)="setCategory(category.slug)">{{ category.name }}</button>
+      <button
+        type="button"
+        [class.active]="selectedCategory() === category.slug"
+        (click)="setCategory(category.slug)"
+      >
+        {{ category.name }}
+      </button>
     }
   </div>
 
@@ -52,9 +72,15 @@
   </div>
 
   @if (loading()) {
-    <div class="loading-state" role="status"><span class="loader"></span><p>Finding the good stuff…</p></div>
+    <div class="loading-state" role="status">
+      <span class="loader"></span>
+      <p>Finding the good stuff…</p>
+    </div>
   } @else if (error()) {
-    <div class="empty-state" role="alert"><p>{{ error() }}</p><button class="secondary-button" type="button" (click)="retry()">Try again</button></div>
+    <div class="empty-state" role="alert">
+      <p>{{ error() }}</p>
+      <button class="secondary-button" type="button" (click)="retry()">Try again</button>
+    </div>
   } @else if (products().length > 0) {
     <div class="product-grid">
       @for (product of products(); track product.id; let first = $first) {
@@ -68,10 +94,20 @@
       }
     </div>
     @if (canShowMore()) {
-      <div class="load-more"><button class="secondary-button" type="button" (click)="showMore()">Show me more <ng-icon name="lucideArrowRight" aria-hidden="true" /></button></div>
+      <div class="load-more">
+        <button class="secondary-button" type="button" (click)="showMore()">
+          Show me more <ng-icon name="lucideArrowRight" aria-hidden="true" />
+        </button>
+      </div>
     }
   } @else {
-    <div class="empty-state"><span class="eyebrow">Nothing here just yet</span><p>Try another search or category to find your next favorite.</p><button class="secondary-button" type="button" (click)="setCategory('all')">See everything</button></div>
+    <div class="empty-state">
+      <span class="eyebrow">Nothing here just yet</span>
+      <p>Try another search or category to find your next favorite.</p>
+      <button class="secondary-button" type="button" (click)="setCategory('all')">
+        See everything
+      </button>
+    </div>
   }
 </section>
 

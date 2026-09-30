@@ -1,9 +1,9 @@
 import { CurrencyPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { Store } from '@ngrx/store';
 import { NG_ICON_DIRECTIVES } from '@ng-icons/core';
+import { Store } from '@ngrx/store';
 import { Order, ShippingDetails } from '../../core/models/commerce.models';
 import { discountedUnitPrice } from '../../core/models/pricing';
 import { placeOrder } from '../../store/shop.actions';

@@ -46,9 +46,12 @@ Catalog and demo authentication use [DummyJSON](https://dummyjson.com/docs). Its
 
 This is a frontend prototype, not a production commerce backend. A production deployment needs server-side inventory/pricing, durable orders, secure authentication (preferably httpOnly cookies), and a payment provider integration.
 
-## Build and tests
+## Build, tests, and coverage
 
 ```bash
 npm run build
 npm test -- --watch=false
+npm run test:coverage
 ```
+
+Coverage includes every TypeScript file under `src/app` and excludes test files. The coverage command enforces at least 90% statements, branches, functions, and lines in each included file; GitHub Actions runs this gate for pull requests and deployments.

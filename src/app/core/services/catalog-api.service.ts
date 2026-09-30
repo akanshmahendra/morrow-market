@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { forkJoin, map, Observable } from 'rxjs';
-import { Category, Product, ProductResponse } from '../models/commerce.models';
 import { environment } from '../../../environments/environment';
+import { Category, Product, ProductResponse } from '../models/commerce.models';
 
 @Injectable({ providedIn: 'root' })
 export class CatalogApiService {
@@ -17,7 +17,7 @@ export class CatalogApiService {
       map(({ productResponse, categories }) => ({
         products: productResponse.products,
         categories,
-      }))
+      })),
     );
   }
 }

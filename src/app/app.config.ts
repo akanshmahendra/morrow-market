@@ -1,7 +1,7 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-import { provideEffects } from '@ngrx/effects';
-import { provideStore } from '@ngrx/store';
+import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { provideClientHydration } from '@angular/platform-browser';
+import { provideRouter } from '@angular/router';
 import { provideIcons, provideNgIconsConfig } from '@ng-icons/core';
 import {
   lucideArrowRight,
@@ -23,13 +23,13 @@ import {
   lucideTruck,
   lucideX,
 } from '@ng-icons/lucide';
-import { provideRouter } from '@angular/router';
+import { provideEffects } from '@ngrx/effects';
+import { provideStore } from '@ngrx/store';
 import { routes } from './app.routes';
-import { provideClientHydration } from '@angular/platform-browser';
-import { ShopEffects } from './store/shop.effects';
-import { shopReducer } from './store/shop.reducer';
 import { AuthEffects } from './store/auth.effects';
 import { authReducer } from './store/auth.reducer';
+import { ShopEffects } from './store/shop.effects';
+import { shopReducer } from './store/shop.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [

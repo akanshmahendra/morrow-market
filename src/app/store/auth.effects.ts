@@ -2,8 +2,8 @@ import { isPlatformBrowser } from '@angular/common';
 import { inject, Injectable, PLATFORM_ID } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, of, switchMap, tap } from 'rxjs';
-import { AccountApiService } from '../core/services/account-api.service';
 import { Customer, LoginResponse } from '../core/models/commerce.models';
+import { AccountApiService } from '../core/services/account-api.service';
 import * as AuthActions from './auth.actions';
 
 const SESSION_KEY = 'morrow-market-session';
@@ -22,11 +22,15 @@ export class AuthEffects {
           tap((response) => this.saveSession(response)),
           map((response) => AuthActions.loginSuccess({ customer: this.toCustomer(response) })),
           catchError(() =>
-            of(AuthActions.loginFailure({ error: 'Those details did not match a demo account. Try the sample sign-in.' }))
-          )
-        )
-      )
-    )
+            of(
+              AuthActions.loginFailure({
+                error: 'Those details did not match a demo account. Try the sample sign-in.',
+              }),
+            ),
+          ),
+        ),
+      ),
+    ),
   );
 
   restoreSession$ = createEffect(() =>
@@ -36,15 +40,17 @@ export class AuthEffects {
         if (!isPlatformBrowser(this.platformId)) return null;
         try {
           const saved = sessionStorage.getItem(SESSION_KEY);
-          return saved ? JSON.parse(saved) as LoginResponse : null;
+          return saved ? (JSON.parse(saved) as LoginResponse) : null;
         } catch {
           return null;
         }
       }),
       map((response) =>
-        AuthActions.restoreSessionSuccess({ customer: response ? this.toCustomer(response) : null })
-      )
-    )
+        AuthActions.restoreSessionSuccess({
+          customer: response ? this.toCustomer(response) : null,
+        }),
+      ),
+    ),
   );
 
   clearSession$ = createEffect(
@@ -53,9 +59,9 @@ export class AuthEffects {
         ofType(AuthActions.logout),
         tap(() => {
           if (isPlatformBrowser(this.platformId)) sessionStorage.removeItem(SESSION_KEY);
-        })
+        }),
       ),
-    { dispatch: false }
+    { dispatch: false },
   );
 
   private saveSession(response: LoginResponse): void {

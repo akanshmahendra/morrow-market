@@ -1,9 +1,9 @@
 import { CurrencyPipe, DecimalPipe, NgOptimizedImage } from '@angular/common';
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, computed, effect, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { Store } from '@ngrx/store';
 import { NG_ICON_DIRECTIVES } from '@ng-icons/core';
+import { Store } from '@ngrx/store';
 import { map } from 'rxjs';
 import { Product } from '../../core/models/commerce.models';
 import { discountedUnitPrice } from '../../core/models/pricing';
@@ -25,7 +25,7 @@ export class ProductDetailComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly productId = toSignal(
     this.route.paramMap.pipe(map((params) => Number(params.get('id')))),
-    { initialValue: Number(this.route.snapshot.paramMap.get('id')) }
+    { initialValue: Number(this.route.snapshot.paramMap.get('id')) },
   );
 
   readonly products = this.store.selectSignal(selectProducts);
@@ -43,9 +43,18 @@ export class ProductDetailComponent {
     return product ? discountedUnitPrice(product) : 0;
   });
 
+  constructor() {
+    effect(() => {
+      this.productId();
+      this.quantity.set(1);
+      this.selectedImage.set(null);
+    });
+  }
+
   changeQuantity(delta: number): void {
     const product = this.product();
-    if (product) this.quantity.update((value) => Math.max(1, Math.min(product.stock, value + delta)));
+    if (product)
+      this.quantity.update((value) => Math.max(1, Math.min(product.stock, value + delta)));
   }
 
   addToCart(product: Product): void {

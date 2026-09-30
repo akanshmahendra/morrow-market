@@ -1,14 +1,34 @@
 <section class="detail-page page-wrap">
-  <nav class="breadcrumbs" aria-label="Breadcrumb"><a routerLink="/">Shop</a><span>/</span>@if (product(); as item) { <a routerLink="/" fragment="discover">{{ item.category }}</a><span>/</span><span>{{ item.title }}</span> }</nav>
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <a routerLink="/">Shop</a><span>/</span>
+    @if (product(); as item) {
+      <a routerLink="/" fragment="discover">{{ item.category }}</a
+      ><span>/</span><span>{{ item.title }}</span>
+    }
+  </nav>
 
   @if (product(); as item) {
     <div class="detail-layout">
       <div class="gallery">
-        <div class="main-image"><img [ngSrc]="activeImage()" [alt]="item.title" width="1000" height="1000" priority /></div>
+        <div class="main-image">
+          <img [ngSrc]="activeImage()" [alt]="item.title" width="1000" height="1000" priority />
+        </div>
         @if (item.images.length > 1) {
           <div class="thumbnail-row" aria-label="Product images">
             @for (image of item.images; track image; let index = $index) {
-              <button type="button" [class.selected]="activeImage() === image" [attr.aria-label]="'Show image ' + (index + 1)" (click)="selectedImage.set(image)"><img [ngSrc]="image" [alt]="item.title + ' view ' + (index + 1)" width="130" height="130" /></button>
+              <button
+                type="button"
+                [class.selected]="activeImage() === image"
+                [attr.aria-label]="'Show image ' + (index + 1)"
+                (click)="selectedImage.set(image)"
+              >
+                <img
+                  [ngSrc]="image"
+                  [alt]="item.title + ' view ' + (index + 1)"
+                  width="130"
+                  height="130"
+                />
+              </button>
             }
           </div>
         }
@@ -17,26 +37,89 @@
       <div class="detail-copy">
         <span class="eyebrow">{{ item.brand || item.category }}</span>
         <h1>{{ item.title }}</h1>
-        <div class="detail-rating"><span>★ {{ item.rating | number:'1.1-1' }}</span><span>{{ item.availabilityStatus }}</span></div>
-        <div class="detail-price"><strong>{{ discountedPrice() | currency }}</strong>@if (item.discountPercentage > 0) { <del>{{ item.price | currency }}</del><span class="discount-label">{{ item.discountPercentage | number:'1.0-0' }}% off</span> }</div>
+        <div class="detail-rating">
+          <span>★ {{ item.rating | number: '1.1-1' }}</span
+          ><span>{{ item.availabilityStatus }}</span>
+        </div>
+        <div class="detail-price">
+          <strong>{{ discountedPrice() | currency }}</strong>
+          @if (item.discountPercentage > 0) {
+            <del>{{ item.price | currency }}</del
+            ><span class="discount-label"
+              >{{ item.discountPercentage | number: '1.0-0' }}% off</span
+            >
+          }
+        </div>
         <p class="detail-description">{{ item.description }}</p>
-        <div class="stock-line"><span class="stock-dot"></span>{{ item.stock }} available to send</div>
+        <div class="stock-line">
+          <span class="stock-dot"></span>{{ item.stock }} available to send
+        </div>
         <div class="purchase-row">
           <div class="quantity-control" aria-label="Choose quantity">
-            <button type="button" aria-label="Decrease quantity" [disabled]="quantity() <= 1" (click)="changeQuantity(-1)"><ng-icon name="lucideMinus" aria-hidden="true" /></button>
+            <button
+              type="button"
+              aria-label="Decrease quantity"
+              [disabled]="quantity() <= 1"
+              (click)="changeQuantity(-1)"
+            >
+              <ng-icon name="lucideMinus" aria-hidden="true" />
+            </button>
             <span aria-live="polite">{{ quantity() }}</span>
-            <button type="button" aria-label="Increase quantity" [disabled]="quantity() >= item.stock" (click)="changeQuantity(1)"><ng-icon name="lucidePlus" aria-hidden="true" /></button>
+            <button
+              type="button"
+              aria-label="Increase quantity"
+              [disabled]="quantity() >= item.stock"
+              (click)="changeQuantity(1)"
+            >
+              <ng-icon name="lucidePlus" aria-hidden="true" />
+            </button>
           </div>
-          <button class="primary-button add-button" type="button" [disabled]="item.stock < 1" (click)="addToCart(item)">Add to bag <ng-icon name="lucideShoppingBag" aria-hidden="true" /></button>
-          <button class="save-detail" type="button" [class.saved]="wishlistIds().includes(item.id)" [attr.aria-pressed]="wishlistIds().includes(item.id)" [attr.aria-label]="wishlistIds().includes(item.id) ? 'Remove from saved items' : 'Save item'" (click)="toggleSaved(item)"><ng-icon name="lucideHeart" aria-hidden="true" /></button>
+          <button
+            class="primary-button add-button"
+            type="button"
+            [disabled]="item.stock < 1"
+            (click)="addToCart(item)"
+          >
+            Add to bag <ng-icon name="lucideShoppingBag" aria-hidden="true" />
+          </button>
+          <button
+            class="save-detail"
+            type="button"
+            [class.saved]="wishlistIds().includes(item.id)"
+            [attr.aria-pressed]="wishlistIds().includes(item.id)"
+            [attr.aria-label]="
+              wishlistIds().includes(item.id) ? 'Remove from saved items' : 'Save item'
+            "
+            (click)="toggleSaved(item)"
+          >
+            <ng-icon name="lucideHeart" aria-hidden="true" />
+          </button>
         </div>
-        <div class="detail-promises"><div><ng-icon name="lucideTruck" aria-hidden="true" /><span>Complimentary delivery over $75</span></div><div><ng-icon name="lucidePackageCheck" aria-hidden="true" /><span>Easy 30-day returns</span></div></div>
-        <details class="product-details"><summary>More to know <ng-icon name="lucideChevronDown" aria-hidden="true" /></summary><p>{{ item.description }} We choose pieces that are made to be used, loved, and kept close.</p></details>
+        <div class="detail-promises">
+          <div>
+            <ng-icon name="lucideTruck" aria-hidden="true" /><span
+              >Complimentary delivery over $75</span
+            >
+          </div>
+          <div>
+            <ng-icon name="lucidePackageCheck" aria-hidden="true" /><span>Easy 30-day returns</span>
+          </div>
+        </div>
+        <details class="product-details">
+          <summary>More to know <ng-icon name="lucideChevronDown" aria-hidden="true" /></summary>
+          <p>
+            {{ item.description }} We choose pieces that are made to be used, loved, and kept close.
+          </p>
+        </details>
       </div>
     </div>
   } @else if (loading()) {
     <div class="detail-message" role="status">Finding this good thing…</div>
   } @else {
-    <div class="detail-message"><span class="eyebrow">A little elusive</span><h1>We couldn’t find that one.</h1><a class="primary-button" routerLink="/">Back to the collection</a></div>
+    <div class="detail-message">
+      <span class="eyebrow">A little elusive</span>
+      <h1>We couldn’t find that one.</h1>
+      <a class="primary-button" routerLink="/">Back to the collection</a>
+    </div>
   }
 </section>

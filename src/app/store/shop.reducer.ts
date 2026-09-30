@@ -1,11 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import {
-  CartItem,
-  Category,
-  Order,
-  Product,
-  ProductSort,
-} from '../core/models/commerce.models';
+import { CartItem, Category, Order, Product, ProductSort } from '../core/models/commerce.models';
 import * as ShopActions from './shop.actions';
 
 export interface ShopState {
@@ -51,7 +45,10 @@ export const shopReducer = createReducer(
   on(ShopActions.setCategory, (state, { category }) => ({ ...state, category, visibleCount: 12 })),
   on(ShopActions.setSearch, (state, { query }) => ({ ...state, query, visibleCount: 12 })),
   on(ShopActions.setSort, (state, { sort }) => ({ ...state, sort, visibleCount: 12 })),
-  on(ShopActions.showMoreProducts, (state) => ({ ...state, visibleCount: state.visibleCount + 12 })),
+  on(ShopActions.showMoreProducts, (state) => ({
+    ...state,
+    visibleCount: state.visibleCount + 12,
+  })),
   on(ShopActions.toggleWishlist, (state, { productId }) => ({
     ...state,
     wishlistIds: state.wishlistIds.includes(productId)
@@ -64,7 +61,7 @@ export const shopReducer = createReducer(
       ? state.cartItems.map((item) =>
           item.product.id === product.id
             ? { ...item, quantity: Math.min(item.quantity + quantity, product.stock) }
-            : item
+            : item,
         )
       : [...state.cartItems, { product, quantity: Math.min(quantity, product.stock) }];
     return { ...state, cartItems };
@@ -81,7 +78,7 @@ export const shopReducer = createReducer(
         : state.cartItems.map((item) =>
             item.product.id === productId
               ? { ...item, quantity: Math.min(quantity, item.product.stock) }
-              : item
+              : item,
           ),
   })),
   on(ShopActions.clearCart, (state) => ({ ...state, cartItems: [] })),
@@ -96,5 +93,5 @@ export const shopReducer = createReducer(
     cartItems: data.cartItems,
     wishlistIds: data.wishlistIds,
     orders: data.orders,
-  }))
+  })),
 );

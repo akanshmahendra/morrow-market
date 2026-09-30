@@ -1,11 +1,11 @@
 import { AsyncPipe } from '@angular/common';
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { Store } from '@ngrx/store';
 import { NG_ICON_DIRECTIVES } from '@ng-icons/core';
-import { selectCartCount, selectCustomer } from './store/shop.selectors';
-import { loadCatalog, loadPersistedData, setSearch } from './store/shop.actions';
+import { Store } from '@ngrx/store';
 import { restoreSession } from './store/auth.actions';
+import { loadCatalog, loadPersistedData, setSearch } from './store/shop.actions';
+import { selectCartCount, selectCustomer } from './store/shop.selectors';
 
 @Component({
   imports: [AsyncPipe, RouterLink, RouterOutlet, NG_ICON_DIRECTIVES],
