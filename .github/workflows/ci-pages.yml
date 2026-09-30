@@ -88,8 +88,15 @@ jobs:
           --configuration "${{ steps.target.outputs.configuration }}"
           --base-href "${{ steps.target.outputs.base_href }}"
 
-      - name: Add SPA route fallback
-        run: cp dist/morrow-market/browser/index.html dist/morrow-market/browser/404.html
+      - name: Prepare Pages entry point
+        shell: bash
+        run: |
+          client_dir="dist/morrow-market/browser"
+          if [[ ! -f "$client_dir/index.html" && -f "$client_dir/index.csr.html" ]]; then
+            cp "$client_dir/index.csr.html" "$client_dir/index.html"
+          fi
+          test -f "$client_dir/index.html"
+          cp "$client_dir/index.html" "$client_dir/404.html"
 
       - name: Upload Pages bundle
         uses: actions/upload-artifact@v4
