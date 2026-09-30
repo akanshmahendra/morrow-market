@@ -1,16 +1,23 @@
 <!doctype html>
 <html lang="en" data-beasties-container="">
-<head>
-  <meta charset="utf-8">
-  <title>Morrow Market | Everyday things, found thoughtfully</title>
-  <base href="/morrow-market/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f5ef">
-  <meta name="description" content="Discover useful, beautiful everyday finds at Morrow Market. Thoughtfully chosen goods for home, beauty and everything in between.">
-  <link rel="preconnect" href="https://cdn.dummyjson.com" crossorigin="">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-<style>:root{color-scheme:light;--paper:#f7f5ef;--surface:#fffefa;--ink:#202721;--muted:#737970;--line:#deded5;--sage:#dce6d8;--sage-deep:#334d3f;--coral:#d8613e;--sun:#e9b85d;--font-body:"DM Sans", sans-serif;--font-display:"Fraunces", Georgia, serif;font-family:var(--font-body);color:var(--ink);background:var(--paper);font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}*{box-sizing:border-box}html{min-width:320px;scroll-behavior:smooth}body{min-width:320px;min-height:100vh;margin:0}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}</style><link rel="stylesheet" href="styles-JINC7E5S.css" media="print" data-beasties-media="all"><noscript><link rel="stylesheet" href="styles-JINC7E5S.css"></noscript></head>
-<body ngcm="">
-  <app-root></app-root>
-<script src="main-I3KRBRI4.js" type="module"></script><script>document.querySelectorAll('link[data-beasties-media]').forEach(function(l){l.media=l.getAttribute('data-beasties-media');l.removeAttribute('data-beasties-media')})</script></body>
+  <head>
+    <meta charset="utf-8">
+    <title>Morrow Market | Everyday things, found thoughtfully</title>
+    <base href="/morrow-market/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f5ef">
+    <meta name="description" content="Discover useful, beautiful everyday finds at Morrow Market. Thoughtfully chosen goods for home, beauty and everything in between.">
+    <link rel="preconnect" href="https://cdn.dummyjson.com" crossorigin="">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script>
+      const redirectPath = new URLSearchParams(window.location.search).get('p');
+      if (redirectPath !== null) {
+        const baseHref = document.querySelector('base')?.getAttribute('href') ?? '/';
+        window.history.replaceState(null, '', `${baseHref}${redirectPath}`);
+      }
+    </script>
+  <style>:root{color-scheme:light;--paper:#f7f5ef;--surface:#fffefa;--ink:#202721;--muted:#737970;--line:#deded5;--sage:#dce6d8;--sage-deep:#334d3f;--coral:#d8613e;--sun:#e9b85d;--font-body:"DM Sans", sans-serif;--font-display:"Fraunces", Georgia, serif;font-family:var(--font-body);color:var(--ink);background:var(--paper);font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}*{box-sizing:border-box}html{min-width:320px;scroll-behavior:smooth}body{min-width:320px;min-height:100vh;margin:0}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}</style><link rel="stylesheet" href="styles-JINC7E5S.css" media="print" data-beasties-media="all"><noscript><link rel="stylesheet" href="styles-JINC7E5S.css"></noscript></head>
+  <body ngcm="">
+    <app-root></app-root>
+  <script src="main-I3KRBRI4.js" type="module"></script><script>document.querySelectorAll('link[data-beasties-media]').forEach(function(l){l.media=l.getAttribute('data-beasties-media');l.removeAttribute('data-beasties-media')})</script></body>
 </html>
