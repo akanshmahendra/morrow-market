@@ -38,7 +38,7 @@ One-time repository setup:
 4. The workflow creates the `dev` and `prod` deployment environments on their first run. Add required reviewers or branch restrictions to `prod` under **Settings → Environments** if production approval is desired.
 5. Merge to `develop` to publish the dev URL; merge to `main` to publish production.
 
-The workflow publishes Angular's browser bundle and preserves the other environment's directory on the `gh-pages` branch. It converts Angular's CSR entry point to `index.html` and adds a `404.html` copy to support deep links on GitHub Pages.
+The workflow publishes Angular's browser bundle and preserves the other environment's directory on the `gh-pages` branch. It converts Angular's CSR entry point to `index.html` and generates an environment-aware `404.html` fallback so deep links can be refreshed on GitHub Pages.
 
 ## Data and state
 

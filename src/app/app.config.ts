@@ -60,5 +60,5 @@ export const appConfig: ApplicationConfig = {
       lucideX,
     }),
     provideNgIconsConfig({ strokeWidth: 1.8 }),
-  ]
+  ],
 };

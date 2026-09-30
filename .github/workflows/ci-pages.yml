@@ -22,6 +22,8 @@ jobs:
       environment: ${{ steps.target.outputs.environment }}
       configuration: ${{ steps.target.outputs.configuration }}
       base_href: ${{ steps.target.outputs.base_href }}
+      prod_base_href: ${{ steps.target.outputs.prod_base_href }}
+      dev_base_href: ${{ steps.target.outputs.dev_base_href }}
       destination_dir: ${{ steps.target.outputs.destination_dir }}
       site_url: ${{ steps.target.outputs.site_url }}
     steps:
@@ -57,9 +59,13 @@ jobs:
             destination_dir="."
             if [[ "$repository" == "$owner.github.io" ]]; then
               base_href="/"
+              prod_base_href="/"
+              dev_base_href="/dev/"
               site_url="https://${owner}.github.io/"
             else
               base_href="/${repository}/"
+              prod_base_href="/${repository}/"
+              dev_base_href="/${repository}/dev/"
               site_url="https://${owner}.github.io/${repository}/"
             fi
           elif [[ "$target_ref" == "develop" ]]; then
@@ -68,9 +74,13 @@ jobs:
             destination_dir="dev"
             if [[ "$repository" == "$owner.github.io" ]]; then
               base_href="/dev/"
+              prod_base_href="/"
+              dev_base_href="/dev/"
               site_url="https://${owner}.github.io/dev/"
             else
               base_href="/${repository}/dev/"
+              prod_base_href="/${repository}/"
+              dev_base_href="/${repository}/dev/"
               site_url="https://${owner}.github.io/${repository}/dev/"
             fi
           else
@@ -79,6 +89,8 @@ jobs:
           fi
 
           echo "base_href=${base_href}" >> "$GITHUB_OUTPUT"
+          echo "prod_base_href=${prod_base_href}" >> "$GITHUB_OUTPUT"
+          echo "dev_base_href=${dev_base_href}" >> "$GITHUB_OUTPUT"
           echo "destination_dir=${destination_dir}" >> "$GITHUB_OUTPUT"
           echo "site_url=${site_url}" >> "$GITHUB_OUTPUT"
 
@@ -90,13 +102,43 @@ jobs:
 
       - name: Prepare Pages entry point
         shell: bash
+        env:
+          PROD_BASE_HREF: ${{ steps.target.outputs.prod_base_href }}
+          DEV_BASE_HREF: ${{ steps.target.outputs.dev_base_href }}
         run: |
-          client_dir="dist/morrow-market/browser"
-          if [[ ! -f "$client_dir/index.html" && -f "$client_dir/index.csr.html" ]]; then
-            cp "$client_dir/index.csr.html" "$client_dir/index.html"
-          fi
-          test -f "$client_dir/index.html"
-          cp "$client_dir/index.html" "$client_dir/404.html"
+          node --input-type=module <<'NODE'
+          import { existsSync, copyFileSync, writeFileSync } from 'node:fs';
+          import { join } from 'node:path';
+
+          const clientDir = 'dist/morrow-market/browser';
+          const indexHtml = join(clientDir, 'index.html');
+          const csrHtml = join(clientDir, 'index.csr.html');
+          if (!existsSync(indexHtml) && existsSync(csrHtml)) {
+            copyFileSync(csrHtml, indexHtml);
+          }
+          if (!existsSync(indexHtml)) {
+            throw new Error(`Angular browser entry point was not found in ${clientDir}`);
+          }
+
+          const productionBase = JSON.stringify(process.env.PROD_BASE_HREF);
+          const developmentBase = JSON.stringify(process.env.DEV_BASE_HREF);
+          const notFoundHtml = `<!doctype html>
+          <html lang="en">
+            <head><meta charset="utf-8"><title>Morrow Market</title></head>
+            <body>
+              <script>
+                const path = window.location.pathname;
+                const productionBase = ${productionBase};
+                const developmentBase = ${developmentBase};
+                const base = path.startsWith(developmentBase) ? developmentBase : productionBase;
+                const route = path.slice(base.length);
+                const redirect = route + window.location.search + window.location.hash;
+                window.location.replace(base + '?p=' + encodeURIComponent(redirect));
+              </script>
+            </body>
+          </html>`;
+          writeFileSync(join(clientDir, '404.html'), notFoundHtml);
+          NODE
 
       - name: Upload Pages bundle
         uses: actions/upload-artifact@v4
