@@ -5,7 +5,7 @@ import {
   logout,
   restoreSession,
   restoreSessionSuccess
-} from "./chunk-5VGR7ZCJ.js";
+} from "./chunk-ZZNTUQ5L.js";
 import {
   addToCart,
   clearCart,
@@ -22,13 +22,13 @@ import {
   setSort,
   showMoreProducts,
   toggleWishlist
-} from "./chunk-TJIYVG26.js";
+} from "./chunk-46YXLFEM.js";
 import {
   NG_ICON_DIRECTIVES,
   NgIcon,
   provideIcons,
   provideNgIconsConfig
-} from "./chunk-6WX6LQWI.js";
+} from "./chunk-JKLOG7BW.js";
 import {
   AsyncPipe,
   Component,
@@ -112,7 +112,27 @@ import {
   ɵɵtext,
   ɵɵtextInterpolate,
   ɵɵtextInterpolate1
-} from "./chunk-5QH7RXCL.js";
+} from "./chunk-CU7B2LGP.js";
+
+// node_modules/@ng-icons/lucide/fesm2022/ng-icons-lucide.mjs
+var lucideArrowRight = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>`;
+var lucideCheck = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M20 6 9 17l-5-5"></path></svg>`;
+var lucideChevronDown = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="m6 9 6 6 6-6"></path></svg>`;
+var lucideCircleCheck = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>`;
+var lucideCircleUserRound = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M17.925 20.056a6 6 0 0 0-11.851.001"></path><circle cx="12" cy="11" r="4"></circle><circle cx="12" cy="12" r="10"></circle></svg>`;
+var lucideHeart = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg>`;
+var lucideMenu = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>`;
+var lucideMinus = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M5 12h14"></path></svg>`;
+var lucidePackageCheck = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M12 22V12"></path><path d="m16 17 2 2 4-4"></path><path d="M21 11.127V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.729l7 4a2 2 0 0 0 2 .001l1.32-.753"></path><path d="M3.29 7 12 12l8.71-5"></path><path d="m7.5 4.27 8.997 5.148"></path></svg>`;
+var lucidePlus = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>`;
+var lucideSearch = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>`;
+var lucideShieldCheck = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>`;
+var lucideShoppingBag = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M16 10a4 4 0 0 1-8 0"></path><path d="M3.103 6.034h17.794"></path><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"></path></svg>`;
+var lucideSlidersHorizontal = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M10 5H3"></path><path d="M12 19H3"></path><path d="M14 3v4"></path><path d="M16 17v4"></path><path d="M21 12h-9"></path><path d="M21 19h-5"></path><path d="M21 5h-7"></path><path d="M8 10v4"></path><path d="M8 12H3"></path></svg>`;
+var lucideSparkles = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>`;
+var lucideTrash2 = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>`;
+var lucideTruck = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18" r="2"></circle><circle cx="7" cy="18" r="2"></circle></svg>`;
+var lucideX = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>`;
 
 // node_modules/@ngrx/effects/fesm2022/ngrx-effects.mjs
 var DEFAULT_EFFECT_CONFIG = {
@@ -586,58 +606,120 @@ function provideEffects(...effects) {
   ]);
 }
 
-// node_modules/@ng-icons/lucide/fesm2022/ng-icons-lucide.mjs
-var lucideArrowRight = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>`;
-var lucideCheck = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M20 6 9 17l-5-5"></path></svg>`;
-var lucideChevronDown = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="m6 9 6 6 6-6"></path></svg>`;
-var lucideCircleCheck = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><circle cx="12" cy="12" r="10"></circle><path d="m9 12 2 2 4-4"></path></svg>`;
-var lucideCircleUserRound = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M17.925 20.056a6 6 0 0 0-11.851.001"></path><circle cx="12" cy="11" r="4"></circle><circle cx="12" cy="12" r="10"></circle></svg>`;
-var lucideHeart = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg>`;
-var lucideMenu = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>`;
-var lucideMinus = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M5 12h14"></path></svg>`;
-var lucidePackageCheck = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M12 22V12"></path><path d="m16 17 2 2 4-4"></path><path d="M21 11.127V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.729l7 4a2 2 0 0 0 2 .001l1.32-.753"></path><path d="M3.29 7 12 12l8.71-5"></path><path d="m7.5 4.27 8.997 5.148"></path></svg>`;
-var lucidePlus = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>`;
-var lucideSearch = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="m21 21-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></svg>`;
-var lucideShieldCheck = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>`;
-var lucideShoppingBag = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M16 10a4 4 0 0 1-8 0"></path><path d="M3.103 6.034h17.794"></path><path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z"></path></svg>`;
-var lucideSlidersHorizontal = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M10 5H3"></path><path d="M12 19H3"></path><path d="M14 3v4"></path><path d="M16 17v4"></path><path d="M21 12h-9"></path><path d="M21 19h-5"></path><path d="M21 5h-7"></path><path d="M8 10v4"></path><path d="M8 12H3"></path></svg>`;
-var lucideSparkles = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>`;
-var lucideTrash2 = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>`;
-var lucideTruck = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18" r="2"></circle><circle cx="7" cy="18" r="2"></circle></svg>`;
-var lucideX = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width:var(--ng-icon__stroke-width, 2)"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>`;
-
 // src/app/app.routes.ts
 var routes = [
   __spreadValues({
     path: "",
-    loadComponent: () => import("./chunk-V3JDVWYF.js").then((m) => m.StorefrontComponent)
+    loadComponent: () => import("./chunk-63AOMOPT.js").then((m) => m.StorefrontComponent)
   }, false ? { \u0275entryName: "src/app/features/storefront/storefront.component.ts" } : {}),
   __spreadValues({
     path: "product/:id",
-    loadComponent: () => import("./chunk-KHF4EMT4.js").then((m) => m.ProductDetailComponent)
+    loadComponent: () => import("./chunk-QETVV3G3.js").then((m) => m.ProductDetailComponent)
   }, false ? { \u0275entryName: "src/app/features/product-detail/product-detail.component.ts" } : {}),
   __spreadValues({
     path: "wishlist",
-    loadComponent: () => import("./chunk-PRPIASE5.js").then((m) => m.WishlistComponent)
+    loadComponent: () => import("./chunk-H5MAQUNY.js").then((m) => m.WishlistComponent)
   }, false ? { \u0275entryName: "src/app/features/wishlist/wishlist.component.ts" } : {}),
   __spreadValues({
     path: "account",
-    loadComponent: () => import("./chunk-4YOQFWOP.js").then((m) => m.AccountComponent)
+    loadComponent: () => import("./chunk-KLWWMHQS.js").then((m) => m.AccountComponent)
   }, false ? { \u0275entryName: "src/app/features/account/account.component.ts" } : {}),
   __spreadValues({
     path: "cart",
-    loadComponent: () => import("./chunk-57OHEAGK.js").then((m) => m.CartComponent)
+    loadComponent: () => import("./chunk-YJUKBVSU.js").then((m) => m.CartComponent)
   }, false ? { \u0275entryName: "src/app/features/cart/cart.component.ts" } : {}),
   __spreadValues({
     path: "checkout",
-    loadComponent: () => import("./chunk-ND2ZGHET.js").then((m) => m.CheckoutComponent)
+    loadComponent: () => import("./chunk-FX2YHUXY.js").then((m) => m.CheckoutComponent)
   }, false ? { \u0275entryName: "src/app/features/checkout/checkout.component.ts" } : {}),
   __spreadValues({
     path: "orders/:id",
-    loadComponent: () => import("./chunk-AHOW2AUZ.js").then((m) => m.OrderConfirmationComponent)
+    loadComponent: () => import("./chunk-QVJVLE4Y.js").then((m) => m.OrderConfirmationComponent)
   }, false ? { \u0275entryName: "src/app/features/order-confirmation/order-confirmation.component.ts" } : {}),
   { path: "**", redirectTo: "" }
 ];
+
+// src/app/core/services/account-api.service.ts
+var AccountApiService = class _AccountApiService {
+  http = inject(HttpClient);
+  login(username, password) {
+    return this.http.post("https://dummyjson.com/auth/login", {
+      username,
+      password,
+      expiresInMins: 60
+    });
+  }
+  static \u0275fac = function AccountApiService_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _AccountApiService)();
+  };
+  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({ token: _AccountApiService, factory: _AccountApiService.\u0275fac, providedIn: "root" });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AccountApiService, [{
+    type: Injectable,
+    args: [{ providedIn: "root" }]
+  }], null, null);
+})();
+
+// src/app/store/auth.effects.ts
+var SESSION_KEY = "morrow-market-session";
+var AuthEffects = class _AuthEffects {
+  actions$ = inject(Actions);
+  accountApi = inject(AccountApiService);
+  platformId = inject(PLATFORM_ID);
+  login$ = createEffect(() => this.actions$.pipe(ofType(login), switchMap(({ username, password }) => this.accountApi.login(username, password).pipe(tap((response) => this.saveSession(response)), map((response) => loginSuccess({ customer: this.toCustomer(response) })), catchError(() => of(loginFailure({
+    error: "Those details did not match a demo account. Try the sample sign-in."
+  })))))));
+  restoreSession$ = createEffect(() => this.actions$.pipe(ofType(restoreSession), map(() => {
+    if (!isPlatformBrowser(this.platformId))
+      return null;
+    try {
+      const saved = sessionStorage.getItem(SESSION_KEY);
+      return saved ? JSON.parse(saved) : null;
+    } catch {
+      return null;
+    }
+  }), map((response) => restoreSessionSuccess({
+    customer: response ? this.toCustomer(response) : null
+  }))));
+  clearSession$ = createEffect(() => this.actions$.pipe(ofType(logout), tap(() => {
+    if (isPlatformBrowser(this.platformId))
+      sessionStorage.removeItem(SESSION_KEY);
+  })), { dispatch: false });
+  saveSession(response) {
+    if (isPlatformBrowser(this.platformId)) {
+      sessionStorage.setItem(SESSION_KEY, JSON.stringify(response));
+    }
+  }
+  toCustomer(response) {
+    const _a = response, { accessToken: _accessToken, refreshToken: _refreshToken } = _a, customer = __objRest(_a, ["accessToken", "refreshToken"]);
+    return customer;
+  }
+  static \u0275fac = function AuthEffects_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _AuthEffects)();
+  };
+  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({ token: _AuthEffects, factory: _AuthEffects.\u0275fac });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AuthEffects, [{
+    type: Injectable
+  }], null, null);
+})();
+
+// src/app/store/auth.reducer.ts
+var initialAuthState = {
+  customer: null,
+  loading: false,
+  error: null
+};
+var authReducer = createReducer(
+  initialAuthState,
+  on(login, (state) => __spreadProps(__spreadValues({}, state), { loading: true, error: null })),
+  on(loginSuccess, (state, { customer }) => __spreadProps(__spreadValues({}, state), { customer, loading: false })),
+  on(loginFailure, (state, { error }) => __spreadProps(__spreadValues({}, state), { loading: false, error })),
+  on(logout, () => initialAuthState),
+  on(restoreSessionSuccess, (state, { customer }) => __spreadProps(__spreadValues({}, state), { customer }))
+);
 
 // src/environments/environment.ts
 var environment = {
@@ -679,7 +761,9 @@ var ShopEffects = class _ShopEffects {
   api = inject(CatalogApiService);
   store = inject(Store);
   platformId = inject(PLATFORM_ID);
-  loadCatalog$ = createEffect(() => this.actions$.pipe(ofType(loadCatalog), switchMap(() => this.api.getCatalog().pipe(map((data) => loadCatalogSuccess(data)), catchError(() => of(loadCatalogFailure({ error: "The catalog could not be loaded. Please try again." })))))));
+  loadCatalog$ = createEffect(() => this.actions$.pipe(ofType(loadCatalog), switchMap(() => this.api.getCatalog().pipe(map((data) => loadCatalogSuccess(data)), catchError(() => of(loadCatalogFailure({
+    error: "The catalog could not be loaded. Please try again."
+  })))))));
   loadPersistedData$ = createEffect(() => this.actions$.pipe(ofType(loadPersistedData), map(() => {
     if (!isPlatformBrowser(this.platformId))
       return emptyData;
@@ -733,7 +817,9 @@ var shopReducer = createReducer(
   on(setCategory, (state, { category }) => __spreadProps(__spreadValues({}, state), { category, visibleCount: 12 })),
   on(setSearch, (state, { query }) => __spreadProps(__spreadValues({}, state), { query, visibleCount: 12 })),
   on(setSort, (state, { sort }) => __spreadProps(__spreadValues({}, state), { sort, visibleCount: 12 })),
-  on(showMoreProducts, (state) => __spreadProps(__spreadValues({}, state), { visibleCount: state.visibleCount + 12 })),
+  on(showMoreProducts, (state) => __spreadProps(__spreadValues({}, state), {
+    visibleCount: state.visibleCount + 12
+  })),
   on(toggleWishlist, (state, { productId }) => __spreadProps(__spreadValues({}, state), {
     wishlistIds: state.wishlistIds.includes(productId) ? state.wishlistIds.filter((id) => id !== productId) : [...state.wishlistIds, productId]
   })),
@@ -763,84 +849,6 @@ var shopReducer = createReducer(
     wishlistIds: data.wishlistIds,
     orders: data.orders
   }))
-);
-
-// src/app/core/services/account-api.service.ts
-var AccountApiService = class _AccountApiService {
-  http = inject(HttpClient);
-  login(username, password) {
-    return this.http.post("https://dummyjson.com/auth/login", {
-      username,
-      password,
-      expiresInMins: 60
-    });
-  }
-  static \u0275fac = function AccountApiService_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _AccountApiService)();
-  };
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({ token: _AccountApiService, factory: _AccountApiService.\u0275fac, providedIn: "root" });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AccountApiService, [{
-    type: Injectable,
-    args: [{ providedIn: "root" }]
-  }], null, null);
-})();
-
-// src/app/store/auth.effects.ts
-var SESSION_KEY = "morrow-market-session";
-var AuthEffects = class _AuthEffects {
-  actions$ = inject(Actions);
-  accountApi = inject(AccountApiService);
-  platformId = inject(PLATFORM_ID);
-  login$ = createEffect(() => this.actions$.pipe(ofType(login), switchMap(({ username, password }) => this.accountApi.login(username, password).pipe(tap((response) => this.saveSession(response)), map((response) => loginSuccess({ customer: this.toCustomer(response) })), catchError(() => of(loginFailure({ error: "Those details did not match a demo account. Try the sample sign-in." })))))));
-  restoreSession$ = createEffect(() => this.actions$.pipe(ofType(restoreSession), map(() => {
-    if (!isPlatformBrowser(this.platformId))
-      return null;
-    try {
-      const saved = sessionStorage.getItem(SESSION_KEY);
-      return saved ? JSON.parse(saved) : null;
-    } catch {
-      return null;
-    }
-  }), map((response) => restoreSessionSuccess({ customer: response ? this.toCustomer(response) : null }))));
-  clearSession$ = createEffect(() => this.actions$.pipe(ofType(logout), tap(() => {
-    if (isPlatformBrowser(this.platformId))
-      sessionStorage.removeItem(SESSION_KEY);
-  })), { dispatch: false });
-  saveSession(response) {
-    if (isPlatformBrowser(this.platformId)) {
-      sessionStorage.setItem(SESSION_KEY, JSON.stringify(response));
-    }
-  }
-  toCustomer(response) {
-    const _a = response, { accessToken: _accessToken, refreshToken: _refreshToken } = _a, customer = __objRest(_a, ["accessToken", "refreshToken"]);
-    return customer;
-  }
-  static \u0275fac = function AuthEffects_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _AuthEffects)();
-  };
-  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({ token: _AuthEffects, factory: _AuthEffects.\u0275fac });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AuthEffects, [{
-    type: Injectable
-  }], null, null);
-})();
-
-// src/app/store/auth.reducer.ts
-var initialAuthState = {
-  customer: null,
-  loading: false,
-  error: null
-};
-var authReducer = createReducer(
-  initialAuthState,
-  on(login, (state) => __spreadProps(__spreadValues({}, state), { loading: true, error: null })),
-  on(loginSuccess, (state, { customer }) => __spreadProps(__spreadValues({}, state), { customer, loading: false })),
-  on(loginFailure, (state, { error }) => __spreadProps(__spreadValues({}, state), { loading: false, error })),
-  on(logout, () => initialAuthState),
-  on(restoreSessionSuccess, (state, { customer }) => __spreadProps(__spreadValues({}, state), { customer }))
 );
 
 // src/app/app.config.ts
@@ -1093,22 +1101,41 @@ var App = class _App {
       </a>
       <a class="icon-link account-link" routerLink="/account" aria-label="Your account">
         <ng-icon name="lucideCircleUserRound" aria-hidden="true" />
-        <span class="action-label">@if (customer$ | async; as customer) { {{ customer.firstName }} } @else { Account }</span>
+        <span class="action-label">
+          @if (customer$ | async; as customer) {
+            {{ customer.firstName }}
+          } @else {
+            Account
+          }
+        </span>
       </a>
       <a class="icon-link cart-link" routerLink="/cart" aria-label="Shopping bag">
         <ng-icon name="lucideShoppingBag" aria-hidden="true" />
         <span class="action-label">Bag</span>
         @if (cartCount$ | async; as count) {
-          @if (count > 0) { <span class="cart-count">{{ count }}</span> }
+          @if (count > 0) {
+            <span class="cart-count">{{ count }}</span>
+          }
         }
       </a>
-      <button class="mobile-menu" type="button" [attr.aria-expanded]="menuOpen()" [attr.aria-label]="menuOpen() ? 'Close navigation' : 'Open navigation'" title="Browse categories" (click)="toggleMenu()">
+      <button
+        class="mobile-menu"
+        type="button"
+        [attr.aria-expanded]="menuOpen()"
+        [attr.aria-label]="menuOpen() ? 'Close navigation' : 'Open navigation'"
+        title="Browse categories"
+        (click)="toggleMenu()"
+      >
         <ng-icon name="lucideMenu" aria-hidden="true" />
       </button>
     </nav>
   </div>
 
-  <nav class="category-nav page-wrap" [class.menu-open]="menuOpen()" aria-label="Product categories">
+  <nav
+    class="category-nav page-wrap"
+    [class.menu-open]="menuOpen()"
+    aria-label="Product categories"
+  >
     <a routerLink="/" fragment="discover">Shop all</a>
     <a routerLink="/" fragment="discover" [queryParams]="{ category: 'beauty' }">Beauty</a>
     <a routerLink="/" fragment="discover" [queryParams]="{ category: 'fragrances' }">Fragrance</a>
@@ -1140,7 +1167,8 @@ var App = class _App {
     <span>\xA9 2026 Morrow Market</span>
     <span>Thoughtfully sourced. Happily delivered.</span>
   </div>
-</footer>`, styles: ["/* src/app/app.scss */\n:host {\n  display: block;\n  min-height: 100vh;\n}\n.announcement {\n  min-height: 34px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 14px;\n  padding: 6px 20px;\n  background: var(--ink);\n  color: #f8f4ed;\n  font-size: 11px;\n}\n.announcement-detail {\n  color: #c8c7bf;\n}\n.site-header {\n  position: relative;\n  z-index: 5;\n  background: var(--paper);\n}\n.header-main {\n  min-height: 82px;\n  display: grid;\n  grid-template-columns: 1fr minmax(230px, 420px) 1fr;\n  align-items: center;\n  gap: 30px;\n}\n.wordmark {\n  display: inline-flex;\n  width: fit-content;\n  align-items: baseline;\n  font-family: var(--font-display);\n  font-size: 34px;\n  font-weight: 600;\n  line-height: 1;\n}\n.wordmark span {\n  color: var(--coral);\n}\n.search-box {\n  height: 43px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 0 12px;\n  border: 1px solid var(--line);\n  border-radius: 3px;\n  color: var(--muted);\n  background: #fffefa;\n}\n.search-box ng-icon {\n  font-size: 17px;\n  flex: none;\n}\n.search-box input {\n  width: 100%;\n  min-width: 0;\n  border: 0;\n  outline: 0;\n  background: transparent;\n  color: var(--ink);\n  font-size: 13px;\n}\n.search-box input::placeholder {\n  color: #8b8d87;\n}\n.search-box kbd {\n  flex: none;\n  padding: 3px 5px;\n  border: 1px solid var(--line);\n  border-radius: 2px;\n  color: #8b8d87;\n  font: 10px var(--font-body);\n}\n.header-actions {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  gap: 25px;\n}\n.icon-link {\n  position: relative;\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  color: var(--ink);\n  font-size: 12px;\n}\n.icon-link ng-icon {\n  display: inline-flex;\n  font-size: 19px;\n}\n.cart-count {\n  position: absolute;\n  top: -8px;\n  left: 11px;\n  display: grid;\n  min-width: 16px;\n  height: 16px;\n  place-items: center;\n  padding: 0 4px;\n  border-radius: 50%;\n  background: var(--coral);\n  color: #fff;\n  font-size: 9px;\n  font-weight: 700;\n}\n.mobile-menu {\n  display: none;\n  border: 0;\n  background: transparent;\n  color: var(--ink);\n  font-size: 22px;\n}\n.category-nav {\n  min-height: 43px;\n  display: flex;\n  align-items: center;\n  gap: 30px;\n  border-top: 1px solid var(--line);\n  font-size: 12px;\n}\n.category-nav a {\n  padding: 12px 0;\n  transition: color 0.2s ease;\n}\n.category-nav a:hover {\n  color: var(--coral);\n}\n.category-nav .nav-new {\n  color: var(--coral);\n}\n.nav-new span {\n  padding-left: 2px;\n}\n.nav-note {\n  margin-left: auto;\n  color: var(--muted);\n  font-family: var(--font-display);\n  font-size: 14px;\n  font-style: italic;\n}\n.site-footer {\n  margin-top: 92px;\n  background: var(--ink);\n  color: #f7f4ec;\n}\n.footer-main {\n  min-height: 180px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 30px;\n}\n.wordmark-light {\n  color: #fffaf0;\n}\n.footer-brand p {\n  margin: 12px 0 0;\n  color: #b5b5ad;\n  font-size: 12px;\n}\n.footer-links {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  color: #d8d7d0;\n  font-size: 12px;\n}\n.footer-note {\n  color: #d8d7d0;\n  font-family: var(--font-display);\n  font-size: 18px;\n  font-style: italic;\n}\n.footer-bottom {\n  min-height: 48px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  border-top: 1px solid #41433d;\n  color: #a9aaa2;\n  font-size: 10px;\n}\n@media (max-width: 760px) {\n  .announcement {\n    font-size: 10px;\n  }\n  .announcement-detail {\n    display: none;\n  }\n  .header-main {\n    min-height: 70px;\n    grid-template-columns: 1fr auto;\n    gap: 13px;\n    padding-block: 12px;\n  }\n  .wordmark {\n    font-size: 30px;\n  }\n  .search-box {\n    grid-row: 2;\n    grid-column: 1/-1;\n    height: 40px;\n  }\n  .header-actions {\n    gap: 15px;\n  }\n  .action-label {\n    display: none;\n  }\n  .saved-link {\n    display: none;\n  }\n  .mobile-menu {\n    display: inline-flex;\n    padding: 4px;\n  }\n  .category-nav {\n    overflow-x: auto;\n    gap: 23px;\n    white-space: nowrap;\n    scrollbar-width: none;\n  }\n  .category-nav.menu-open {\n    max-height: 135px;\n    flex-wrap: wrap;\n    align-content: start;\n    overflow: auto;\n    padding-block: 5px;\n    white-space: normal;\n  }\n  .category-nav::-webkit-scrollbar {\n    display: none;\n  }\n  .nav-note {\n    display: none;\n  }\n  .footer-main {\n    min-height: 230px;\n    flex-wrap: wrap;\n    padding-block: 30px;\n  }\n  .footer-note {\n    display: none;\n  }\n  .footer-links {\n    margin-left: auto;\n  }\n  .footer-bottom {\n    gap: 10px;\n    font-size: 9px;\n  }\n}\n@media (max-width: 430px) {\n  .footer-bottom span:last-child {\n    display: none;\n  }\n}\n/*# sourceMappingURL=app.css.map */\n"] }]
+</footer>
+`, styles: ["/* src/app/app.scss */\n:host {\n  display: block;\n  min-height: 100vh;\n}\n.announcement {\n  min-height: 34px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 14px;\n  padding: 6px 20px;\n  background: var(--ink);\n  color: #f8f4ed;\n  font-size: 11px;\n}\n.announcement-detail {\n  color: #c8c7bf;\n}\n.site-header {\n  position: relative;\n  z-index: 5;\n  background: var(--paper);\n}\n.header-main {\n  min-height: 82px;\n  display: grid;\n  grid-template-columns: 1fr minmax(230px, 420px) 1fr;\n  align-items: center;\n  gap: 30px;\n}\n.wordmark {\n  display: inline-flex;\n  width: fit-content;\n  align-items: baseline;\n  font-family: var(--font-display);\n  font-size: 34px;\n  font-weight: 600;\n  line-height: 1;\n}\n.wordmark span {\n  color: var(--coral);\n}\n.search-box {\n  height: 43px;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 0 12px;\n  border: 1px solid var(--line);\n  border-radius: 3px;\n  color: var(--muted);\n  background: #fffefa;\n}\n.search-box ng-icon {\n  font-size: 17px;\n  flex: none;\n}\n.search-box input {\n  width: 100%;\n  min-width: 0;\n  border: 0;\n  outline: 0;\n  background: transparent;\n  color: var(--ink);\n  font-size: 13px;\n}\n.search-box input::placeholder {\n  color: #8b8d87;\n}\n.search-box kbd {\n  flex: none;\n  padding: 3px 5px;\n  border: 1px solid var(--line);\n  border-radius: 2px;\n  color: #8b8d87;\n  font: 10px var(--font-body);\n}\n.header-actions {\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  gap: 25px;\n}\n.icon-link {\n  position: relative;\n  display: inline-flex;\n  align-items: center;\n  gap: 7px;\n  color: var(--ink);\n  font-size: 12px;\n}\n.icon-link ng-icon {\n  display: inline-flex;\n  font-size: 19px;\n}\n.cart-count {\n  position: absolute;\n  top: -8px;\n  left: 11px;\n  display: grid;\n  min-width: 16px;\n  height: 16px;\n  place-items: center;\n  padding: 0 4px;\n  border-radius: 50%;\n  background: var(--coral);\n  color: #fff;\n  font-size: 9px;\n  font-weight: 700;\n}\n.mobile-menu {\n  display: none;\n  border: 0;\n  background: transparent;\n  color: var(--ink);\n  font-size: 22px;\n}\n.category-nav {\n  min-height: 43px;\n  display: flex;\n  align-items: center;\n  gap: 30px;\n  border-top: 1px solid var(--line);\n  font-size: 12px;\n}\n.category-nav a {\n  padding: 12px 0;\n  transition: color 0.2s ease;\n}\n.category-nav a:hover {\n  color: var(--coral);\n}\n.category-nav .nav-new {\n  color: var(--coral);\n}\n.nav-new span {\n  padding-left: 2px;\n}\n.nav-note {\n  margin-left: auto;\n  color: var(--muted);\n  font-family: var(--font-display);\n  font-size: 14px;\n  font-style: italic;\n}\n.site-footer {\n  margin-top: 92px;\n  background: var(--ink);\n  color: #f7f4ec;\n}\n.footer-main {\n  min-height: 180px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 30px;\n}\n.wordmark-light {\n  color: #fffaf0;\n}\n.footer-brand p {\n  margin: 12px 0 0;\n  color: #b5b5ad;\n  font-size: 12px;\n}\n.footer-links {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  color: #d8d7d0;\n  font-size: 12px;\n}\n.footer-note {\n  color: #d8d7d0;\n  font-family: var(--font-display);\n  font-size: 18px;\n  font-style: italic;\n}\n.footer-bottom {\n  min-height: 48px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  border-top: 1px solid #41433d;\n  color: #a9aaa2;\n  font-size: 10px;\n}\n@media (max-width: 760px) {\n  .announcement {\n    font-size: 10px;\n  }\n  .announcement-detail {\n    display: none;\n  }\n  .header-main {\n    min-height: 70px;\n    grid-template-columns: 1fr auto;\n    gap: 13px;\n    padding-block: 12px;\n  }\n  .wordmark {\n    font-size: 30px;\n  }\n  .search-box {\n    grid-row: 2;\n    grid-column: 1/-1;\n    height: 40px;\n  }\n  .header-actions {\n    gap: 15px;\n  }\n  .action-label {\n    display: none;\n  }\n  .saved-link {\n    display: none;\n  }\n  .mobile-menu {\n    display: inline-flex;\n    padding: 4px;\n  }\n  .category-nav {\n    overflow-x: auto;\n    gap: 23px;\n    white-space: nowrap;\n    scrollbar-width: none;\n  }\n  .category-nav.menu-open {\n    max-height: 135px;\n    flex-wrap: wrap;\n    align-content: start;\n    overflow: auto;\n    padding-block: 5px;\n    white-space: normal;\n  }\n  .category-nav::-webkit-scrollbar {\n    display: none;\n  }\n  .nav-note {\n    display: none;\n  }\n  .footer-main {\n    min-height: 230px;\n    flex-wrap: wrap;\n    padding-block: 30px;\n  }\n  .footer-note {\n    display: none;\n  }\n  .footer-links {\n    margin-left: auto;\n  }\n  .footer-bottom {\n    gap: 10px;\n    font-size: 9px;\n  }\n}\n@media (max-width: 430px) {\n  .footer-bottom span:last-child {\n    display: none;\n  }\n}\n/*# sourceMappingURL=app.css.map */\n"] }]
   }], null, null);
 })();
 (() => {
@@ -1149,5 +1177,5 @@ var App = class _App {
 
 // src/main.ts
 bootstrapApplication(App, appConfig).catch((err) => console.error(err));
-//# debugId=883b544f-3401-56b0-bcfb-27fbe4f5e490
+//# debugId=da26fb75-ba1a-5cd7-9666-cd183b635df8
 //# sourceMappingURL=main.js.map
